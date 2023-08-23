@@ -7,12 +7,38 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     public QuestionList[] questions;
-    public TextMeshProUGUI qTextTMP; // Компонент TextMeshProUGUI для вывода вопросов
+    public TextMeshProUGUI qTextTMP;
+    public TextMeshProUGUI[] answersText;
+
+    List<QuestionList> qList;
+    int RandQ;
+
+    void Start()
+    {
+        qList = new List<QuestionList>(questions);
+    }
 
     public void OnClickPlay()
     {
-        int randomIndex = Random.Range(0, questions.Length);
-        qTextTMP.text = questions[randomIndex].Question;
+        questionGenerate();
+    }
+
+    void questionGenerate()
+    {
+        RandQ = Random.Range(0, qList.Count);
+        QuestionList crntQ = qList[RandQ];
+        qTextTMP.text = crntQ.Question;
+
+        for (int i = 0; i < crntQ.answer.Length; i++)
+        {
+            answersText[i].text = crntQ.answer[i];
+        }
+    }
+
+    public void AnswerBttns()
+    {
+        qList.RemoveAt(RandQ);
+        questionGenerate();
     }
 }
 
