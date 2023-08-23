@@ -9,8 +9,10 @@ public class GameLogic : MonoBehaviour
     public QuestionList[] questions;
     public TextMeshProUGUI qTextTMP;
     public TextMeshProUGUI[] answersText;
+    public GameObject HeadAnim;
 
     List<QuestionList> qList;
+    QuestionList crntQ;
     int RandQ;
 
     void Start()
@@ -21,22 +23,44 @@ public class GameLogic : MonoBehaviour
     public void OnClickPlay()
     {
         questionGenerate();
+        if (!HeadAnim.GetComponent<Animator>().enabled) HeadAnim.GetComponent<Animator>().enabled = true;
+        else HeadAnim.GetComponent<Animator>().SetTrigger("InTrigger");
+
     }
 
     void questionGenerate()
     {
-        RandQ = Random.Range(0, qList.Count);
-        QuestionList crntQ = qList[RandQ];
-        qTextTMP.text = crntQ.Question;
-
-        for (int i = 0; i < crntQ.answer.Length; i++)
+        if (qList.Count > 0) // Исправлено
         {
-            answersText[i].text = crntQ.answer[i];
+            RandQ = Random.Range(0, qList.Count);
+            crntQ = qList[RandQ];
+            qTextTMP.text = crntQ.Question;
+
+            List<string> answers = new List<string>(crntQ.answer);
+
+            for (int i = 0; i < crntQ.answer.Length; i++)
+            {
+                int Rand = Random.Range(0, answers.Count);
+                answersText[i].text = answers[Rand];
+                answers.RemoveAt(Rand);
+            }
+        }
+        else
+        {
+            print("Вы прошли игру"); // Добавлено ;
         }
     }
 
-    public void AnswerBttns()
+    public void AnswerBttns(int index)
     {
+        if (answersText[index].text.ToString() == crntQ.answer[0])
+        {
+            print("правильный ответ");
+        }
+        else
+        {
+            print("неправильный ответ");
+        }
         qList.RemoveAt(RandQ);
         questionGenerate();
     }
