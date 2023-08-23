@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 288.66663
     height: 867.3333
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -321,7 +321,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Fonts
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -329,16 +329,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 82
   m_LastFolders:
-  - Assets/Fonts
+  - Assets/Scripts
   m_LastFoldersGridSize: 82
   m_LastProjectPath: "C:\\Users\\\u0410\u043D\u0434\u0440\u0435\u0439\\Documents\\GitHub\\VictorinaGame\\\u0432\u0438\u043A\u0442\u043E\u0440\u0438\u043D\u04301"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 54610000
-    m_LastClickedID: 24916
-    m_ExpandedIDs: 00000000446100005c610000
+    m_SelectedIDs: 6a610000
+    m_LastClickedID: 24938
+    m_ExpandedIDs: 0000000056610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -366,7 +366,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000044610000
+    m_ExpandedIDs: 0000000056610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -463,7 +463,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 458.66663
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -508,7 +508,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0efbffffde600000
+      m_ExpandedIDs: aac8ffff0ac9ffff6ac9ffffccc9ffff0efbffffe2600000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -914,9 +914,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 461.6789, y: 238.2695, z: -16.225317}
+    m_Target: {x: 429.3028, y: 230.77461, z: -18.805834}
     speed: 2
-    m_Value: {x: 461.6789, y: 238.2695, z: -16.225317}
+    m_Value: {x: 429.3028, y: 230.77461, z: -18.805834}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 31
@@ -966,9 +966,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 324.95233
+    m_Target: 359.98203
     speed: 2
-    m_Value: 324.95233
+    m_Value: 359.98203
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1060,7 +1060,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     x: 0
     y: 578.6667
     width: 1150.3334
-    height: 340.33337
+    height: 340.3333
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
