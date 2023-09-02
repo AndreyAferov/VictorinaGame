@@ -7,37 +7,59 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     public QuestionList[] questions;
-    public TextMeshProUGUI qTextTMP;
+    public TextMeshProUGUI qNumberTMP;
+    public TextMeshProUGUI qTextTMP;  
     public TextMeshProUGUI[] answersText;
     public GameObject resultPanel;
     public TextMeshProUGUI resultText;
     public Button restartButton;
     public GameObject HeadAnim;
 
+    public Button button1;
+    public Button button2;
+    public Button button3;
+    public Button button4;
+
     List<QuestionList> qList;
     QuestionList crntQ;
-    int RandQ;
+    int correctAnswers;
+
+    private int currentQuestionIndex = 0;
+    private int totalQuestions;
 
     void Start()
     {
         qList = new List<QuestionList>(questions);
         resultPanel.SetActive(false);
         restartButton.gameObject.SetActive(false);
+        correctAnswers = 0;
+        HideAnswerButtons();
+        totalQuestions = questions.Length;
     }
 
     public void OnClickPlay()
     {
+        resultPanel.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+
+        if (!HeadAnim.GetComponent<Animator>().enabled)
+            HeadAnim.GetComponent<Animator>().enabled = true;
+        else
+            HeadAnim.GetComponent<Animator>().SetTrigger("InTrigger");
+
+        ShowAnswerButtons();
         questionGenerate();
-        if (!HeadAnim.GetComponent<Animator>().enabled) HeadAnim.GetComponent<Animator>().enabled = true;
-        else HeadAnim.GetComponent<Animator>().SetTrigger("InTrigger");
+        currentQuestionIndex = 0;
     }
 
     void questionGenerate()
     {
         if (qList.Count > 0)
         {
-            RandQ = Random.Range(0, qList.Count);
+            int RandQ = Random.Range(0, qList.Count);
             crntQ = qList[RandQ];
+
+            qNumberTMP.text = (currentQuestionIndex + 1) + "/" + totalQuestions;
             qTextTMP.text = crntQ.Question;
 
             List<string> answers = new List<string>(crntQ.answer);
@@ -47,7 +69,7 @@ public class GameLogic : MonoBehaviour
                 int Rand = Random.Range(0, answers.Count);
                 answersText[i].text = answers[Rand];
                 answers.RemoveAt(Rand);
-                answersText[i].gameObject.SetActive(true); // Показываем кнопки ответов
+                answersText[i].gameObject.SetActive(true);
             }
         }
         else
@@ -58,18 +80,20 @@ public class GameLogic : MonoBehaviour
 
     void ShowResults()
     {
-        qTextTMP.gameObject.SetActive(false); // Скрываем текст вопроса
+        qNumberTMP.gameObject.SetActive(false); 
+        qTextTMP.gameObject.SetActive(false);   
+
         foreach (TextMeshProUGUI answerText in answersText)
         {
-            answerText.gameObject.SetActive(false); // Скрываем текст кнопок ответов
+            answerText.gameObject.SetActive(false);
         }
 
         resultPanel.SetActive(true);
-        int correctAnswers = questions.Length - qList.Count;
-        int totalQuestions = questions.Length;
-        resultText.text = "Результат: " + correctAnswers + " из " + totalQuestions;
+        resultText.text = "Результат: " + correctAnswers + " из " + totalQuestions + " вопросов";
 
         restartButton.gameObject.SetActive(true);
+
+        HideAnswerButtons();
     }
 
     public void OnClickRestart()
@@ -78,7 +102,13 @@ public class GameLogic : MonoBehaviour
         restartButton.gameObject.SetActive(false);
 
         qList = new List<QuestionList>(questions);
+        qNumberTMP.gameObject.SetActive(true); 
         qTextTMP.gameObject.SetActive(true);
+
+        currentQuestionIndex = 0;
+
+        correctAnswers = 0;
+        ShowAnswerButtons();
         questionGenerate();
     }
 
@@ -87,17 +117,32 @@ public class GameLogic : MonoBehaviour
         if (answersText[index].text == crntQ.answer[0])
         {
             print("Правильный ответ");
+            correctAnswers++;
         }
         else
         {
             print("Неправильный ответ");
         }
-        qList.RemoveAt(RandQ);
-        foreach (TextMeshProUGUI answerText in answersText)
-        {
-            answerText.gameObject.SetActive(false); // Скрываем кнопки ответов
-        }
+
+        qList.Remove(crntQ);
+        currentQuestionIndex++;
         questionGenerate();
+    }
+
+    void ShowAnswerButtons()
+    {
+        button1.gameObject.SetActive(true);
+        button2.gameObject.SetActive(true);
+        button3.gameObject.SetActive(true);
+        button4.gameObject.SetActive(true);
+    }
+
+    void HideAnswerButtons()
+    {
+        button1.gameObject.SetActive(false);
+        button2.gameObject.SetActive(false);
+        button3.gameObject.SetActive(false);
+        button4.gameObject.SetActive(false);
     }
 }
 
