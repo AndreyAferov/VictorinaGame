@@ -450,6 +450,7 @@ public class GameLogic : MonoBehaviour
     void ShowResultsUnpossible()
     {
         HidePanel();
+        HidePanel3();
         qNumberTMP.gameObject.SetActive(false);
         qTextTMP.gameObject.SetActive(false);
 

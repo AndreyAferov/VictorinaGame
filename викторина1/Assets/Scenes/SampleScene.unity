@@ -1255,7 +1255,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
-        m_MethodName: AnswerBttnsNormal
+        m_MethodName: AnswerBttnsUnpossible
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1657,7 +1657,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
-        m_MethodName: AnswerBttnsNormal
+        m_MethodName: AnswerBttnsUnpossible
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2202,18 +2202,6 @@ MonoBehaviour:
     - dfd
     - gt
   questionsUnpossible:
-  - Question: "124\u0430\u0446\u0443"
-    answer:
-    - 1
-    - "\u0430\u0432\u0430"
-    - "\u043F\u0432\u0432\u0430\u0432"
-    - "\u0430\u0432\u0430\u044B\u0430"
-  - Question: "124\u0430\u0446\u0443"
-    answer:
-    - 1
-    - "\u0430\u0432\u0430"
-    - "\u043F\u0432\u0432\u0430\u0432"
-    - "\u0430\u0432\u0430\u044B\u0430"
   - Question: "124\u0430\u0446\u0443"
     answer:
     - 1
@@ -3821,7 +3809,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
-        m_MethodName: AnswerBttnsNormal
+        m_MethodName: AnswerBttnsUnpossible
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7834,7 +7822,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 519420033}
         m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
-        m_MethodName: AnswerBttnsNormal
+        m_MethodName: AnswerBttnsUnpossible
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
