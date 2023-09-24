@@ -102,19 +102,67 @@ ScriptsOnlyBuild:
     methodName: OnClickRestart
   - assembly: Assembly-CSharp
     fullTypeName: GameLogic
+    methodName: AnswerBttnsHard
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsUnpossible
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsNormal
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
     methodName: AnswerBttns
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsUnpossible
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: OnClickLite
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsNormal
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsHard
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsHard
   - assembly: Assembly-CSharp
     fullTypeName: GameLogic
     methodName: AnswerBttns
   - assembly: Assembly-CSharp
     fullTypeName: GameLogic
     methodName: AnswerBttns
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: OnClickUnpossible
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsUnpossible
   - assembly: Assembly-CSharp
     fullTypeName: GameLogic
     methodName: OnClickPlay
   - assembly: Assembly-CSharp
     fullTypeName: GameLogic
+    methodName: AnswerBttnsNormal
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsNormal
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
     methodName: AnswerBttns
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: OnClickNormal
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsHard
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: OnClickHard
+  - assembly: Assembly-CSharp
+    fullTypeName: GameLogic
+    methodName: AnswerBttnsUnpossible
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -238,7 +286,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: e1c66482260aee1e1d8427b1e2d7011c
+      Hash: 5ab41f1a2742b18f2a936b3be45bb376
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameLogic
@@ -1217,5 +1265,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: "C:/Users/\u0410\u043D\u0434\u0440\u0435\u0439/Desktop/\u041D\u043E\u0432\u0430\u044F
-    \u043F\u0430\u043F\u043A\u0430"
+  playerPath: "C:/Users/\u0410\u043D\u0434\u0440\u0435\u0439/Desktop/game"
